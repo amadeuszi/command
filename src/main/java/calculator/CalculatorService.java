@@ -20,12 +20,28 @@ public class CalculatorService {
 
     public void receiveCommand(CalculatorCommand command) {
         history.add(command);
+        command.triggerExecute(this);
+
+        if (!command.isSavedInHistory()) {
+            history.remove(history.size() - 1);
+            currentExecutedCommandIndex--;
+        }
     }
 
     public void executeAllCommands() {
         while (currentExecutedCommandIndex < history.size() - 1) {
             currentExecutedCommandIndex++;
-            calculatorState = history.get(currentExecutedCommandIndex).execute(calculatorState);
+            calculatorState = history.get(currentExecutedCommandIndex).execute(this);
         }
+    }
+
+    public int getCalculatorState() {
+        return calculatorState;
+    }
+
+    public void undo() {
+        currentExecutedCommandIndex--;
+        calculatorState = history.get(currentExecutedCommandIndex).undo(this);
+        history.remove(history.size() - 2);
     }
 }

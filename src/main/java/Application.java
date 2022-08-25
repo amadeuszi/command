@@ -11,10 +11,7 @@ public class Application {
         while (true) {
             CalculatorCommand command = client.getNextCommandFromUser();
             calculatorService.receiveCommand(command);
-
-            if (command instanceof ShowResultCommand) {
-                calculatorService.executeAllCommands();
-            }
+            calculatorService.executeAllCommands();
         }
     }
 }

@@ -8,6 +8,7 @@ public class Client {
     public Client() {
         System.out.println("Available commands: ");
         System.out.println("show - shows calculator result");
+        System.out.println("undo - undo last operation");
         System.out.println("add <number> - adds <number> to the result");
         System.out.println("subtract <number> - subtracts <number> from the result");
         System.out.println("multiply <number> - multiply <number> and the result");
@@ -28,6 +29,8 @@ public class Client {
         } else if ("subtract".equals(userInput)) {
             int number = scanner.nextInt();
             return new SubtractCommand(number);
+        } else if ("undo".equals(userInput)) {
+            return new UndoCommand();
         }
 
         throw new RuntimeException("Wrong input from user");

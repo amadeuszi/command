@@ -1,5 +1,7 @@
 package command;
 
+import calculator.CalculatorService;
+
 public class SubtractCommand implements CalculatorCommand {
     private final int number;
 
@@ -8,7 +10,12 @@ public class SubtractCommand implements CalculatorCommand {
     }
 
     @Override
-    public int execute(int secondNumber) {
-        return secondNumber - number;
+    public int execute(CalculatorService calculatorService) {
+        return calculatorService.getCalculatorState() - number;
+    }
+
+    @Override
+    public int undo(CalculatorService calculatorService) {
+        return calculatorService.getCalculatorState() + number;
     }
 }
