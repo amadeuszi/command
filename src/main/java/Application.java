@@ -1,6 +1,7 @@
 import calculator.CalculatorService;
 import client.Client;
 import command.CalculatorCommand;
+import command.ShowResultCommand;
 
 public class Application {
     public static void main(String[] args) {
@@ -10,7 +11,10 @@ public class Application {
         while (true) {
             CalculatorCommand command = client.getNextCommandFromUser();
             calculatorService.receiveCommand(command);
-            calculatorService.executeAllCommands();
+
+            if (command instanceof ShowResultCommand) {
+                calculatorService.executeAllCommands();
+            }
         }
     }
 }
