@@ -1,12 +1,14 @@
 # Wzorzec projektowy - Polecenie (Command)
 
+#### Autor: Amadeusz Iwanowski
+
 Wzorzec polecenie polega na przekształcaniu żądań użytkownika w obiekty.
 Dzięki temu możemy przechowywać historię poleceń. Możemy odłożyć w czasie
 wykonanie poleceń, nie musimy od razu zmieniać stanu aplikacji. Ponadto dzięki
 dostępowi do historii możemy zaimplementować cofanie akcji. **W tej aplikacji
 zaimplementowałem cofanie operacji**.
 
-## Tytuł aplikacji: Kalkulator
+## Tytuł aplikacji: Kalkulator z cofaniem poleceń
 
 Używanie aplikcji odbywa się przez standardowe wejście linii poleceń
 
