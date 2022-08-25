@@ -47,5 +47,9 @@ się w historii dzięki metodzie `isSavedInHistory() => false`
  - UndoCommand - cofa ostatnią operację i usuwa ją z historii
 
 
+### Diagram klas
+
+![Diagram klas projektu](docs/diagram.PNG "Diagram klas projektu")
+
 
 
