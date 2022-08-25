@@ -1,7 +1,6 @@
 import calculator.CalculatorService;
 import client.Client;
 import command.CalculatorCommand;
-import command.ShowResultCommand;
 
 public class Application {
     public static void main(String[] args) {
